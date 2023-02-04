@@ -1,0 +1,7 @@
+@use '@/theme/variables' as *;
+
+.loginContainer {
+    position: relative;
+    height: 60px;
+    margin: $spacing-2;
+}

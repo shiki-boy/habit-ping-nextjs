@@ -1,0 +1,237 @@
+@use './variables';
+@use './transitions';
+
+h1 {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.25rem;
+  line-height: 51px;
+}
+
+h2 {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 43px;
+}
+
+h3 {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 35px;
+}
+
+h4 {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 31px;
+}
+
+h5 {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 29px;
+}
+
+button:not(.custom),
+a.link-btn {
+  padding: 12px variables.$spacing-2;
+  margin: variables.$spacing-2 0;
+  color: variables.$white;
+  border: none;
+  border-radius: variables.$border-radius;
+  cursor: pointer;
+  transition: all transitions.$transition-short;
+  font-weight: 600;
+  border-radius: 30px;
+  font-family: 'Quicksand';
+  font-weight: 600;
+
+  &.primary {
+    background-color: black;
+  }
+  &.primary:hover {
+    background-color: variables.$button-primary-hover;
+  }
+  &.primary:active {
+    background-color: variables.$button-primary-active;
+  }
+
+  &.danger {
+    background-color: variables.$danger;
+  }
+  &.danger:hover {
+    background-color: variables.$button-danger-hover;
+  }
+  &.danger:active {
+    background-color: variables.$button-danger-active;
+  }
+
+  &.secondary {
+    background-color: variables.$white;
+    color: variables.$secondary;
+    border: 1px solid variables.$secondary;
+  }
+  &.secondary:hover {
+    background-color: variables.$button-secondary-hover;
+  }
+  &.secondary:active {
+    background-color: variables.$button-secondary-active;
+  }
+
+  &.secondary.danger {
+    background-color: variables.$white;
+    color: variables.$danger;
+    border: 1px solid variables.$danger;
+  }
+  &.secondary.danger:hover {
+    background-color: variables.$button-secondary-danger-hover;
+  }
+  &.secondary.danger:active {
+    background-color: variables.$button-secondary-danger-active;
+  }
+
+  &.tertiary {
+    background-color: transparent;
+    color: variables.$primary;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+  }
+  &.tertiary:active {
+    color: variables.$button-tertiary-active;
+  }
+
+  &:disabled:not(.loading) {
+    color: variables.$grey-4;
+    background-color: variables.$grey-2;
+    cursor: not-allowed;
+    border: none;
+  }
+
+  &.loading {
+    cursor: progress;
+    animation: btnShimmer 3s infinite;
+    background: linear-gradient(to right, variables.$grey-2 4%, variables.$grey-1 25%, variables.$grey-2 36%);
+    background-size: 1000px 100%;
+  }
+
+  & > svg {
+    margin-right: variables.$spacing-1;
+    vertical-align: middle;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.icon-btn {
+    // FIXME: maybe handle centering better
+    margin: 0;
+    padding: 13px 0px;
+    padding-left: 2px;
+    text-align: center;
+
+    & > svg {
+      margin: 0;
+    }
+  }
+
+  &.link-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+svg {
+  transition: transform transitions.$transition-short;
+
+  &.primary {
+    fill: variables.$primary;
+  }
+  &.secondary {
+    fill: variables.$secondary;
+  }
+  &.light {
+    fill: white;
+  }
+  &.dark {
+    fill: black;
+  }
+  &.subtle {
+    fill: variables.$grey-4;
+  }
+  &.danger {
+    fill: variables.$danger;
+  }
+
+  &.sm {
+    height: 12px;
+    width: 12px;
+  }
+  &.md {
+    height: 14px;
+    width: 14px;
+  }
+  &.lg {
+    height: 16px;
+    width: 16px;
+  }
+  &.xl {
+    height: 18px;
+    width: 18px;
+  }
+
+  &.rotate {
+    transform: rotate(180deg);
+  }
+  &.pointer {
+    cursor: pointer;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: variables.$primary;
+  font-weight: 600;
+  cursor: pointer;
+
+  &.danger {
+    color: variables.$danger;
+    font-weight: bold;
+  }
+}
+
+@keyframes btnShimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+p,
+span {
+  &.subtle {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  &.empahsis {
+    font-weight: 400;
+  }
+  &.error {
+    color: variables.$danger;
+  }
+}

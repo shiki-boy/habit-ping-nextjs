@@ -1,0 +1,53 @@
+// COLORS ====
+$primary: #F8B500;
+$secondary: #50A481;
+$tertiary: #AB4738;
+
+$bg-color: #1e7166;
+$text-color: #222729;
+
+$white: #fff;
+$danger: #fc535c;
+$warning: #ffb627;
+
+$grey-5: #57636f;
+$grey-4: #9b9b9b;
+$grey-3: #bcbcbc;
+$grey-2: #d9d9d9;
+$grey-1: #eeeeee;
+$grey-0: #f2f4ff;
+
+$button-primary-hover: #689a00;
+$button-primary-active: #7bb700;
+$button-secondary-hover: #f3f9e7;
+$button-secondary-active: #fbfff3;
+$button-tertiary-active: #7bb700;
+$button-danger-hover: #f0101b;
+$button-danger-active: #f56b72;
+$button-secondary-danger-hover: rgba(240, 16, 27, 0.1);
+$button-secondary-danger-active: rgba(245, 107, 114, 0.05);
+
+$divider-color: rgba(25, 139, 199, 0.1);
+
+$toast-default: #313131;
+$toast-success: #689a00;
+$toast-error: #d32f2f;
+$toast-warning: #ff9800;
+$toast-info: #2196f3;
+
+// =====
+
+$z-index-lowest: 1;
+$z-index-high: 9;
+$z-index-highest: 10;
+
+$border-radius: 5px;
+$border-radius-large: 10px;
+
+// used for margin and padding both
+$spacing-0: 0px;
+$spacing-1: 10px;
+$spacing-2: 20px;
+$spacing-3: 32px;
+$spacing-4: 48px;
+$spacing-5: 64px;
