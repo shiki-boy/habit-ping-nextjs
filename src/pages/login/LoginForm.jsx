@@ -1,19 +1,24 @@
 import { useFormContext } from 'react-hook-form'
+import { useRouter } from 'next/router'
 
-import classes from './login.module.scss'
+import classes from '../../layouts/AuthLayout/AuthLayout.module.scss'
 
 import InputField from '@/components/Forms/Helpers/InputField'
 import Button from '@/components/Button'
 
-const LoginForm = ( {
-  isLoading,
-  goToForgotPassword = () => {},
-  goToSignUp = () => {},
-} ) => {
+const LoginForm = ( { isLoading } ) => {
+  const router = useRouter()
+
   const { register, formState } = useFormContext()
 
+  const goToSignUp = () => {
+    router.push( '/signup' )
+  }
+
+  const goToForgotPassword = () => {}
+
   return (
-    <div className={ classes.loginForm }>
+    <div className={ classes.formContainer }>
       <InputField name='email'>
         <input
           type='text'

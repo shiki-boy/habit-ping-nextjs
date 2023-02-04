@@ -1,0 +1,17 @@
+@use '@/theme/variables' as *;
+@use '@/theme/transitions' as *;
+
+.authContainer {
+    position: relative;
+    margin: $spacing-2;
+
+    .logo {
+        margin: $spacing-2 0;
+        width: 100%;
+    }
+
+    .formContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}

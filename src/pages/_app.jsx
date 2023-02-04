@@ -12,10 +12,12 @@ const monteserrat = Montserrat({
 export default function App( { Component, pageProps } ) {
   const queryClient = new QueryClient( { defaultOptions: { queries: { refetchOnWindowFocus: false } } } )
 
+  const getLayout = Component.getLayout || ( ( page ) => page )
+
   return (
     <QueryClientProvider client={ queryClient }>
       <div className={ monteserrat.variable }>
-        <Component { ...pageProps } />
+        {getLayout( <Component { ...pageProps } /> )}
       </div>
     </QueryClientProvider>
   )
