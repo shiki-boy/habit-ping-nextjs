@@ -1,7 +1,17 @@
 @use '@/theme/variables' as *;
+@use '@/theme/transitions' as *;
 
 .loginContainer {
     position: relative;
-    height: 60px;
     margin: $spacing-2;
+
+    .logo {
+        margin: $spacing-2 0;
+        width: 100%;
+    }
+
+    .loginForm {
+        display: flex;
+        flex-direction: column;
+    }   
 }

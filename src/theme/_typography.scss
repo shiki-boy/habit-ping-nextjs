@@ -52,7 +52,7 @@ a.link-btn {
   transition: all transitions.$transition-short;
   font-weight: 600;
   border-radius: 30px;
-  font-family: 'Quicksand';
+  font-family: var(--primary-font);
   font-weight: 600;
 
   &.primary {
@@ -102,6 +102,7 @@ a.link-btn {
   &.tertiary {
     background-color: transparent;
     color: variables.$primary;
+    margin: 5px 0;
 
     &:hover {
       text-decoration: underline;

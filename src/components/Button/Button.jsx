@@ -1,7 +1,6 @@
-import React from 'react'
 import classNames from 'classnames'
 
-import Icon from '@/components/Icon'
+// import Icon from '@/components/Icon'
 
 const Button = ( {
   title,
@@ -24,9 +23,9 @@ const Button = ( {
     disabled={ disabled || isLoading }
     { ...rest }
   >
-    {IconComponent && (
+    {/* {IconComponent && (
       <Icon IconComponent={ IconComponent } className={ iconClassName }/>
-    )}
+    )} */}
     {isLoading ? loadingText : title}
   </button>
 )

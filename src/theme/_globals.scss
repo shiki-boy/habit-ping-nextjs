@@ -1,4 +1,5 @@
-@use '@/theme/variables';
+@use '@/theme/variables' as *;
+@use '@/theme/transitions' as *;
 
 :root {
   font-synthesis: none;
@@ -20,5 +21,41 @@ body {
 }
 
 body {
-  background-color: variables.$bg-color;
+  background-color: $bg-color;
+}
+
+.textField {
+  margin: $spacing-2 0;
+
+  input {
+      padding: 0.8em;
+      outline: none;
+      border: 2px solid wheat;
+      background-color: transparent;
+      border-radius: 20px;
+      width: 100%;
+  }
+
+  label {
+      font-size: 100%;
+      position: absolute;
+      left: 0;
+      padding: 0.8em;
+      margin-left: 0.5em;
+      pointer-events: none;
+      transition: all $transition-short $ease-smooth;
+      color: wheat;
+  }
+
+  & :is(input:focus, input:valid)~label {
+      transform: translateY(-50%) scale(.9);
+      margin: 0em;
+      margin-left: 1.3em;
+      padding: 0.4em;
+      background-color: rgb(30, 113, 102);
+  }
+
+  & :is(input:focus, input:valid) {
+      border-color: wheat;
+  }
 }
